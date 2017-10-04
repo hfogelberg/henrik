@@ -1,0 +1,27 @@
+baseurl = "https://hfogelberg.github.io/henrik"
+title = "Henrik Fogelberg"
+theme = "hugo-theme-nix"
+languageCode = "en-us"
+googleAnalytics = "UA-84673017-1"
+
+[menu]
+  [[menu.header]]
+    name = "posts"
+    weight = 0
+    url = "/post"
+  [[menu.header]]
+    name = "CV"
+    weight = 1
+    url = "/cv"
+
+[params]
+	GithubID = "hfogelberg"
+  TwitterID = "hfogelberg"
+  LinkedInID = "henrikfogelberg"
+  Name = "Henrik Fogelberg"
+  HeaderUsername = "henrik"
+  HeaderHostname = "fogelberg"
+  Email = "henrik.fogelberg@gmail.com"
+  About = "Hello! I've been working in the IT world for 20 years and messing around with computers for 30+. Mostly I've been programming and doing so on pretty much everyting from AS/400s to mobiles. My tools of choise are Golang, PWA and Vue.js. I'm also interested in AI/ML, but am a bit of a beginner there.\n\nCurrently I do freelance work and tinker with some projects on my own. Need som help? "
+  ProfilePicture = "/profile.jpg"
+  publishDir = "docs"

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Oauth in Golang &middot; Henrik Fogelberg </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.21" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://hfogelberg.github.io/henrik/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://hfogelberg.github.io/henrik>henrik@fogelberg ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://hfogelberg.github.io/henrik">/home/henrik</a>
+				</li>
+				
+				
+				<li >
+					<a href="/henrik/cv">~/cv</a>
+				</li>
+				
+				
+				<li >
+					<a href="/henrik/post">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://hfogelberg.github.io/henrik/post/go-oauth/">Oauth in Golang</a></h1>
+            <span class="post-date">Aug 19, 2017 </span>
+            <div class="post-content">
+                
+
+<p>The sample code for the tutorial is available on <a href="https://github.com/hfogelberg/go-auth-demo">Github</a>.</p>
+
+<p>Years ago when I first came in contact with Oauth it seemed like magic. I just plugged it in and didn’t think too much about what was going on and why. The truth is that there is no magic involved and it really is quite simple.</p>
+
+<p>There are several packages around for Oauth in Golang, for instance Goth. However if you want to reinvent the wheel and build a version of your own from the ground up it really is quite straight forward. And even if you use a ready made component it’s good to know how it actually works.</p>
+
+<p>The basic flow is:
+1. Call an authentication provider who will redirect the user to a login page.
+2. When the user has logged in with his/her credentials an access token is returned.
+3. Call the authentication provider again with the access token and the email address, name, profile picture or whatever information they provide and you are entitled to have is returned.</p>
+
+<h2 id="setting-up-the-go-project">Setting up the Go project</h2>
+
+<p>First of all just scaffle the project and set up som basic routing.</p>
+
+<pre><code>$ mkdir go-auth-sample
+$ cd go-auth sample
+$ touch main.go
+</code></pre>
+
+<p>Open main.go in whatever text editor you use and just build up the basic structure. Nothing strange here really:</p>
+
+<pre><code>package main
+import (
+  &quot;fmt&quot;
+  &quot;net/http&quot;
+  &quot;github.com/gorilla/mux&quot;
+)
+func main() {
+  router := mux.NewRouter().StrictSlash(true)
+  router.HandleFunc(&quot;/&quot;, indexHandler)
+  router.HandleFunc(&quot;/login&quot;, loginHandler)
+  router.HandleFunc(&quot;/callback&quot;, callbackHandler)
+  http.ListenAndServe(&quot;:3000&quot;, router)
+}
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintln(w, &quot;Index&quot;)
+}
+func loginHandler(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintln(w, &quot;Login&quot;)
+}
+func callbackHandler(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintln(w, &quot;Callback&quot;)
+}
+</code></pre>
+
+<p>Just run go get if you don’t have Gorilla mux on the machine, start it up and give it a quick try. If you’re fed up with killing and restarting Go whenever you change the code you can use Fresh for the job. It works much the same as Nodemon if you come from the world of Node like I do.</p>
+
+<h2 id="setting-up-google-auth">Setting up Google Auth</h2>
+
+<p>For the example we’ll use Google as the authentication provider. I assume most Go developers have a Google account.</p>
+
+<p>I have a love-hate relationship to the Google Cloud Platform. You can do more or less anything and there’s a ton of amazing tools that are free or at least reasonably priced. It is however a nightmare to navigate through and enabling Ouath is no exception. Nobody on the team seems to have heard of usability.</p>
+
+<p>Anyway, head over to the Google Cloud Console. In the blue menu bar click on Select a Project. Either reuse some old test project you have lying around or create a new one for the tutorial. There is a limit to the number of free projects, so by all means reuse one if it’s possible.
+In the dashboard select Enable APIs and Get Credentials, under Getting started.</p>
+
+<p>In the new window click on Credentials, which is in the menu bar to the left. Then click Create Credentials. In the drop down select Oauth Client Id.</p>
+
+<p>Select Web application, give it a name and fill in <code>http://localhost:3000</code> and <code>http://localhost:3000/callback</code> as origins and and callback URI respectively. Click on create. Be sure to copy and save the client ID and client secret.</p>
+
+<p>If you’re on a Mac or *nix open the .bash_profile and add two new lines:
+<img src="/bash.png" alt="Bash" /></p>
+
+<p>Back to the code
+Time to update the code with a couple of imports
+´´´´
+import (
+  &ldquo;fmt&rdquo;
+  &ldquo;net/http&rdquo;
+  &ldquo;github.com/gorilla/mux&rdquo;
+  &ldquo;golang.org/x/oauth2&rdquo;
+  &ldquo;golang.org/x/oauth2/google&rdquo;
+)
+´´´´</p>
+
+<p>We’re using two of the standard libraries in Google for authentication that you may need to go get.
+Next configure Google auth by adding this variable right after the import:
+´´´´
+var googleOauthConfig = &amp;oauth2.Config{
+  RedirectURL: &ldquo;<a href="http://localhost:3000/callback&quot;">http://localhost:3000/callback&quot;</a>,
+  ClientID: os.Getenv(&ldquo;GOOGLE_CLIENT_ID&rdquo;),
+  ClientSecret: os.Getenv(&ldquo;GOOGLE_CLIENT_SECRET&rdquo;),
+  Scopes: []string{
+    &ldquo;<a href="https://www.googleapis.com/auth/userinfo.profile&quot;">https://www.googleapis.com/auth/userinfo.profile&quot;</a>,
+    &ldquo;<a href="https://www.googleapis.com/auth/userinfo.email&quot;}">https://www.googleapis.com/auth/userinfo.email&quot;}</a>,
+  Endpoint: google.Endpoint,
+}
+´´´´</p>
+
+<p>This might look a bit of a mess, but we’ll take it step by step. First of all we specify the callback url when the authentication has succeeded. This has to match whatever you specified in the Google Cloud Platform. Second, read the client id and client secret from .bash_profile. Next, we specify that we want access to the logged in user’s email and profile. You can add more permission requests here. Personally I however think twice about clicking on Accept if they want all my contacts, shoe size and bank account number. Finally, the end point is a constant defined in the libraries we imported.
+Just update the index handler and login handler:</p>
+
+<p>´´´´
+func indexHandler(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintln(w, &ldquo;<a href='/login'>Log in with Google</a>&rdquo;)
+}</p>
+
+<p>func loginHandler(w http.ResponseWriter, r *http.Request) {
+  oauthStateString := uniuri.New()
+  url := googleOauthConfig.AuthCodeURL(oauthStateString)
+  http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+}
+´´´´
+Give it a try. Click on Login and you should see a page similar to this:
+<img src="/sign-in.png" alt="BasSign inh" /></p>
+
+<p>Click on the user you want to log in with and you should be redirected to the callback page. Obviously nothing much will happen there, but that’s the next thing on the todo-list.</p>
+
+<h2 id="handling-the-callback">Handling the callback</h2>
+
+<p>At the start of the tutorial I wrote that the authentication provider will return an access token when the user has been successfully logged in. So, let’s see if it does. Modify the callback function like below, rerun the application and try to log in again. You should see the access token in the web browser.</p>
+
+<p>´´´´
+func callbackHandler(w http.ResponseWriter, r *http.Request) {
+  code := r.FormValue(“code”)
+  token, _ := googleOauthConfig.Exchange(oauth2.NoContext, code)
+  fmt.Fprintf(w, token.AccessToken)
+}
+´´´´</p>
+
+<p>I leave out the error handling to keep the code a bit shorter. You should also call the method token.Valid() to check the token. A more complete code example is available on Github.
+Getting user information
+Just having the token doesn’t do much good. We also want to know who is logged in. So, for step three we need to make a second call, passing the token as a parameter. The response will contain a json string with data we want. First of all we’ll add a struct with user info:</p>
+
+<p>´´´´
+type GoogleUser struct {
+  ID string <code>json:&quot;id&quot;</code>
+  Email string <code>json:&quot;email&quot;</code>
+  VerifiedEmail bool <code>json:&quot;verified_email&quot;</code>
+  Name string <code>json:&quot;name&quot;</code>
+  GivenName string <code>json:&quot;given_name&quot;</code>
+  FamilyName string <code>json:&quot;family_name&quot;</code>
+  Link string <code>json:&quot;link&quot;</code>
+  Picture string <code>json:&quot;picture&quot;</code>
+  Gender string <code>json:&quot;gender&quot;</code>
+  Locale string <code>json:&quot;locale&quot;</code>
+}
+´´´´</p>
+
+<p>Next, call the Google Oauth API to fetch the user data and unmarshal.
+´´´´
+response, _ := http.Get(“<a href="https://www.googleapis.com/oauth2/v2/userinfo?access_token=&quot;">https://www.googleapis.com/oauth2/v2/userinfo?access_token=&quot;</a> + token.AccessToken)
+defer response.Body.Close()
+contents, _ := ioutil.ReadAll(response.Body)
+var user *GoogleUser
+_ = json.Unmarshal(contents, &amp;user)
+And finally print it all out on the screen
+fmt.Fprintf(w, “Email: %s\nName: %s\nImage link: %s\n”, user.Email, user.Name, user.Picture)
+´´´´</p>
+
+<p>And finally print it all out on the screen
+fmt.Fprintf(w, “Email: %s\nName: %s\nImage link: %s\n”, user.Email, user.Name, user.Picture)</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>OK, it&rsquo;s quite a bit of code to get it working, although it is quite straight forward. If you need more providers - which you will- the code will obviously be proportionally larger. It makes a lot of sense to use a ready made component.</p>
+
+<p>There isn&rsquo;t really one around that suits my needs completely, so I&rsquo;m working on one of my own at the moment. Soon I&rsquo;ll let you know more.</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2017 Henrik Fogelberg -
+<span class="credit">
+	Powered by 
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and 
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

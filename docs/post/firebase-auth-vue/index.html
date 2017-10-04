@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Using Firebase auth with Vue &middot; Henrik Fogelberg </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.21" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://hfogelberg.github.io/henrik/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=https://hfogelberg.github.io/henrik>henrik@fogelberg ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="https://hfogelberg.github.io/henrik">/home/henrik</a>
+				</li>
+				
+				
+				<li >
+					<a href="/henrik/cv">~/cv</a>
+				</li>
+				
+				
+				<li >
+					<a href="/henrik/post">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="https://hfogelberg.github.io/henrik/post/firebase-auth-vue/">Using Firebase auth with Vue</a></h1>
+            <span class="post-date">Jul 25, 2017 </span>
+            <div class="post-content">
+                
+
+<p><img src="/passport.png" alt="Passport" /></p>
+
+<p>If you’re a startup, an indie developer or just working on some side project in Vue JS, chances are that you will be thinking of using Firebase for storage. This might very well be a good idea: Firebase is really easy to use and has quite a generous free plan. Of course nothing is completely free. If whatever you are working on does take off it could get expensive. But that’s perhaps a bit of a luxury problem.</p>
+
+<p>One thing I really like about Firebase is the authentication UI. Authentication is a crucial part of most web and mobile apps today and something I prefer to not mess around with. It’s quite a big commitment to build a good, secure, user friendly, well designed authentication solution and of course maintain it.</p>
+
+<p>Setting up Firebase UI (what a completely non descriptive name!) for a regular web application is incredibly simple. It’s easy in Vue JS too, but there are a couple of steps to figure out.
+So just follow along!</p>
+
+<h2 id="scaffold-the-vue-project">Scaffold the Vue project</h2>
+
+<p>Begin by scaffolding the app and adding a few files:</p>
+
+<pre><code>$ vue init webpack-simple fb-test-app
+$ cd fb-test-app
+$ npm install
+$ npm install --save firebase firebaseui vue-router
+$ mkdir src/components
+$ mkdir src/helpers
+$ touch src/helpers/firebaseConfig.js
+$ touch src/components/Auth.vue
+$ touch src/components/AuthSuccess.vue
+$ touch src/router.js
+</code></pre>
+
+<h2 id="set-up-firebase">Set up Firebase</h2>
+
+<p>Head over to the Firebase console and either create a new project or reuse some old test project you have lying around. Firebase has a generous free plan, but there is a limit in the number of projects you can create. Strangely there’s no fixed limit. Instead some algorithm works out how many projects you can create depending on your relation to Google. Usually it’s somewhere between five and ten, so don’t waste them.
+Click on Authentication when you have a project set up. Then hit the big blue button saying Set up sign in method. Enable Email/Password and Google. If you wonder how to do that, just hover over the the line and an edit icon will appear.</p>
+
+<p><img src="/fb-auth.png" alt="Firebase Auth" /></p>
+
+<p>At the bottom of the screen you can restrict which domains login will be permitted from. By default localhost and Firebase hosted apps are permitted.
+Next, click on Web setup and copy the authentication keys. You won’t need the other stuff.</p>
+
+<h2 id="time-to-write-some-code">Time to write some code!</h2>
+
+<pre><code>We’ll begin with firebaseConfig.js. This is where you’ll use the keys you just copied:
+export const config = { 
+  apiKey: &quot;AIzaSyCX-r4B1Hs8uNaySWZOdmUP4a9DS_C2OFE&quot;, 
+  authDomain: &quot;medium-demo.firebaseapp.com&quot;, 
+  databaseURL: &quot;https://medium-demo.firebaseio.com&quot;, 
+  storageBucket: &quot;medium-demo.appspot.com&quot;, 
+  messagingSenderId: &quot;1039269062579&quot;
+};
+</code></pre>
+
+<p>Second, just clean up the App.vue:</p>
+
+<pre><code>&lt;template&gt; 
+  &lt;div id=”app”&gt; 
+    &lt;router-view&gt;&lt;/router-view&gt; 
+  &lt;/div&gt;
+&lt;/template&gt; 
+&lt;script&gt; 
+  export default { 
+    name: ‘app’, 
+  }
+&lt;/script&gt;
+</code></pre>
+
+<p>We’ll use the style sheet supplied by Firebase. Just paste it in the index.html:</p>
+
+<pre><code>&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;node_modules/firebaseui/dist/firebaseui.css&quot; /&gt;
+Then over to the router. Add this to the router.js file. Nothing revolutionary going on here.
+import VueRouter from 'vue-router';
+import Auth from './components/Auth.vue';
+import AuthSuccess from './components/AuthSuccess.vue';
+const router = new VueRouter({
+  mode: 'history',
+  routes: [
+    { path: '/', component: Auth },
+    { path: '/auth', component: Auth },
+    { path: '/success', component: AuthSuccess }
+  ]
+});
+export default router;
+</code></pre>
+
+<p>Main.js is where the interesting stuff happens. Start by doing the imports at the top of the file:</p>
+
+<pre><code>import Vue from 'vue'
+import App from './App.vue'
+import VueRouter from 'vue-router'
+import firebase from 'firebase'
+import firebaseui from 'firebaseui';
+import router from './router'
+import {config} from './helpers/firebaseConfig'
+Vue.use(VueRouter)
+And then for the magic:
+new Vue({
+  router,
+  created() {
+    firebase.initializeApp(config);
+    firebase.auth().onAuthStateChanged((user) =&gt; {
+      if(user) {
+        this.$router.push('/success')
+      } else {
+        this.$router.push('/auth')
+      }
+     });
+    },
+  el: '#app',
+  render: h =&gt; h(App)
+});
+</code></pre>
+
+<p>Wow, that’s quite a bit going on in created! First of all, obviously, Firebase is initialized with the config keys. What happens next is interesting. Firebase auth will watch for the user object. If there is a user -i.e. someone is logged in- push the router to success. If not, push the router to the login page. We’ll create these two pages straight away.
+First of all Auth.vue:</p>
+
+<pre><code>&lt;template lang=&quot;html&quot;&gt;
+  &lt;div id=&quot;firebaseui-auth-container&quot;&gt;&lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+
+import firebase from 'firebase';
+import firebaseui from 'firebaseui'
+import {config} from '../helpers/firebaseConfig';
+
+export default {
+  name: 'auth',
+  mounted() {
+    var uiConfig = {
+      signInSuccessUrl: '/success',
+      signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ]
+      };
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start('#firebaseui-auth-container', uiConfig);
+    },
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>In the template we just use the ui provided by Firebase. In the script we configure the UI to use Google and Email sign in (remember, we set those up in console earlier). What is really important is that this must be done in mounted. If you do it in created it won’t work.
+And finally AuthSuccess.vue. First of all the template:</p>
+
+<pre><code>&lt;template&gt; 
+  &lt;div&gt; 
+    &lt;h1&gt;Signup succeeded&lt;/h1&gt; 
+    &lt;button @click=’logOut’&gt;Log out&lt;/button&gt; 
+    &lt;hr&gt; 
+    &lt;img :src=”photo” style=”height: 120px”&gt; &lt;br&gt; 
+    &lt;p&gt;{{name}}&lt;/p&gt; 
+    &lt;p&gt;{{email}}&lt;/p&gt; 
+    &lt;p&gt;{{userId}}&lt;/p&gt; 
+    &lt;hr&gt; 
+    &lt;pre&gt;{{user}}&lt;/pre&gt; 
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+<p>We’ll have a log out button, just to check out how that works. If you sign in with Google and have an avatar set the photo will be displayed. Then of course we just print the name, email and user id. Finally, just dump the whole user object on the screen.
+Then for the code. Start by importing Firebase and defining the data:</p>
+
+<pre><code>&lt;script&gt;
+import firebase from ‘firebase’
+export default {
+ data(){
+   return {
+     photo: ‘’,
+     userId: ‘’,
+     name: ‘’,
+     email: ‘’,
+     user: {}
+   }
+ },
+};
+&lt;/script&gt;
+</code></pre>
+
+<p>Next, the created method. When the view is created the app checks if there is a user. If there is, the properties are read and assigned to the variable previously declared.</p>
+
+<pre><code>created() { 
+  this.user = firebase.auth().currentUser; 
+  if(this.user) { 
+    this.name = this.user.displayName; 
+    this.email = this.user.email; 
+    this.photo = this.user.photoURL; 
+    this.userId = this.user.uid; 
+  } 
+},
+</code></pre>
+
+<p>And finally it’s just the log out method left. All we have to do is tell Firebase to sign out. Remember, in the created method of main.js we said that the application should redirect to the sign in page if the user state is changed and there is no user.</p>
+
+<pre><code>methods: { 
+  logOut() { 
+    firebase.auth().signOut();
+  } 
+},
+</code></pre>
+
+<h2 id="playtime">Playtime!</h2>
+
+<p>Just run the app with npm run dev and hopefully you’ll have the Auth view on your screen after a couple of seconds. Click on shiny red Google button and permit the application to sign in with Google. Give it a couple of seconds and something like this should be on your screen:</p>
+
+<p><img src="/fb-auth-ok.png" alt="Auth OK" /></p>
+
+<p>If you are running on Chrome open the dev-tools, click on Application and choose Local storage in the menu. There you will find the firebase token
+Finally, click on Sign out and you should be sent back to the Sign in screen. Not bad, eh?
+The code for this tutorial is available on <a href="https://github.com/hfogelberg/fb-auth-demo">Github</a>.</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2017 Henrik Fogelberg -
+<span class="credit">
+	Powered by 
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and 
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>
