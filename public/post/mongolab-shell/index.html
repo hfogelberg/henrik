@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Connecting to Mongolab From the Shell &middot; Henrik Fogelberg </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.21" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=/>henrik@fogelberg ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="/">/home/henrik</a>
+				</li>
+				
+				
+				<li >
+					<a href="/cv">~/cv</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/mongolab-shell/">Connecting to Mongolab From the Shell</a></h1>
+            <span class="post-date">Nov 18, 2015 </span>
+            <div class="post-content">
+                
+
+<p>For some maintenance work on a Meteor site running on Heroku I needed to connect to the database from the shell. It is of course possible, but finding out how to do it required a bit of digging in the documentation and an email to Mongolab’s support, They responded quickly (thank you!) and here it goes:</p>
+
+<h2 id="1-finding-your-credentials">1. Finding your credentials</h2>
+
+<p>To find your password and user id cd in to the root of the repo you are working on and run this command: <code>$ heroku config | grep MONGO</code>.</p>
+
+<p>The response will look something like this</p>
+
+<pre><code>MONGOLAB_URI:    mongodb://heroku_user_id:some_random_password@dc729610.mongolab.com:55862/heroku_user_id
+</code></pre>
+
+<p>Your user credentials are between the slashes and the @-sign, so:</p>
+
+<pre><code>user id: heroku_user_id
+password: some_random_password
+</code></pre>
+
+<h2 id="2-logging-in">2. Logging in</h2>
+
+<p>Logging in from the shell is now easy</p>
+
+<pre><code>$mongo dc729610.mongolab.com:55862/heroku_user_id -u heroku_user_id -p some_random_password
+</code></pre>
+
+<h2 id="3-trouble-shooting">3. Trouble shooting</h2>
+
+<p>If you can’t log in the two most likely reasons are:
+- Network issues
+- Credentials</p>
+
+<p>To check if you have network issues (perhaps something is blocked in the fire wall?) you can in fact connect to Mongolab without your username and password. You can for obvious reasons not do anything when you are connected, but you can at least find out if you can access the database.</p>
+
+<pre><code>$mongo dc729610.mongolab.com:55862/heroku_user_id
+</code></pre>
+
+<p>If that works, recheck your credentials!</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2017 Henrik Fogelberg -
+<span class="credit">
+	Powered by 
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and 
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>

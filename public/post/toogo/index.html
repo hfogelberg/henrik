@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title> Introducing TooGo &middot; Henrik Fogelberg </title>
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.21" />
+
+
+<script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/css/nix.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Open+Sans|Roboto|Montserrat|Concert+One" rel="stylesheet">
+
+
+
+
+    </head>
+
+    <body>
+        <header>
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse font-header">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" id="green-terminal" href=/>henrik@fogelberg ~ $</a>
+		</div>
+
+		
+		<div class="collapse navbar-collapse" id="navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="/">/home/henrik</a>
+				</li>
+				
+				
+				<li >
+					<a href="/cv">~/cv</a>
+				</li>
+				
+				
+				<li >
+					<a href="/post">~/posts</a>
+				</li>
+				
+
+			</ul>
+		</div>
+	</div>
+</nav>
+</header>
+
+        <div class="container wrapper">
+            <h1><a href="/post/toogo/">Introducing TooGo</a></h1>
+            <span class="post-date">Sep 20, 2017 </span>
+            <div class="post-content">
+                
+
+<p>Ever so often I end up copy-pasting small code functions. This is OK, but it is a bit tedious and in pretty much every web project it&rsquo;s the same handfull of functions I use. So I just dumped them in a package called <a href="https://github.com/hfogelberg/toogo">TooGo</a>  (Tools for Go )and they are ready to plug in. Currently there isn&rsquo;t very much in it, but the idea is to keep it growing and add more features as I come up with more useful snippets.</p>
+
+<h2 id="getenv">Getenv</h2>
+
+<p>Read enviroment variables and use a default value if it&rsquo;s missing.
+<code>port := Getenv(&quot;PORT&quot;, &quot;:3000&quot;)</code></p>
+
+<h2 id="faviconhandler">FaviconHandler</h2>
+
+<p>Use in routing to serve the favicon.
+<code>router.HandleFunc(&quot;/favicon.ico&quot;, faviconHandler)</code></p>
+
+<h2 id="roundtotwo">RoundToTwo</h2>
+
+<p>Takes a float64 and returns a string, rounded to two decimal points.</p>
+
+<h2 id="timetoday">TimeToDay</h2>
+
+<p>Takes a unix time in int format and returns the day, abbrevated to three letters.</p>
+
+<h2 id="timetohour">TimeToHour</h2>
+
+<p>Takes a unix timestamp in int format and returns the time in 24 hour format.</p>
+
+            </div>
+            
+            <div class="post-comments">
+                
+            </div>
+            
+            <div class="push"></div>
+        </div>
+        <footer class="footer text-center">
+<p>Copyright &copy; 2017 Henrik Fogelberg -
+<span class="credit">
+	Powered by 
+	<a target="_blank" href="https://gohugo.io">Hugo</a>
+	and 
+	<a target="_blank" href="https://github.com/LordMathis/hugo-theme-nix/">Nix</a> theme.
+</span>
+</p>
+</footer>
+
+    </body>
