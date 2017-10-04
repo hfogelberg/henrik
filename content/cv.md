@@ -12,10 +12,10 @@ I have been in the IT industry for more than 20 years and have worked with a wid
 Apart from programming I have practical experience of technical project management, requirement analyses, testing, business process analyses, software architecture, technical writing, teaching, etc.
 
 ## Employments
-### Golizzard (own company)
+### Self employed
 September 2015 - Present
 
-Web development in Golang, Node JS, Vue JS. 
+Web development in Golang, Node JS, Vue JS. Machine learning in Python and Go.
 
 ### Senior Consultant at ÅF
 December 2012 - September 2015
@@ -68,7 +68,7 @@ Performed weather observations and helped prepare the data used for weather fore
 - iOS: Objective-C, Swift, React Native
 - Databases: Mongo DB, SQL-Server, Postgres, Oracle, SQLite
 - Agile: Scrum, Kanban, TDD
-- Machine Learning: Python, Numpy, Pandas, Matplotlib, Seaborn
+- Machine Learning: Golang, Python, Numpy, Pandas, Matplotlib, Seaborn
 - Docker
 - Hugo
 
