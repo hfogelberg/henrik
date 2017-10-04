@@ -61,6 +61,16 @@ There are several packages around for Oauth in Golang, for instance Goth. Howeve
     </item>
     
     <item>
+      <title>Machine Learning Courses Review</title>
+      <link>/post/ml-courses-review/</link>
+      <pubDate>Fri, 16 Jun 2017 11:04:42 +0100</pubDate>
+      
+      <guid>/post/ml-courses-review/</guid>
+      <description>One morning I woke up realising that I had, again, missed the train. I was a dinosaur, condemned to work in the past. Or perhaps jobless for ever?
+Machine learning and artificial intelligence are the hottest subjects right now and there is no going back. What especially ML is about is handling huge amounts of data and making them useful is some way. It could be making suggestions, filtering out information, grouping data in a meaningful way or making predictions.</description>
+    </item>
+    
+    <item>
       <title>Why Go?</title>
       <link>/post/about-go/</link>
       <pubDate>Thu, 01 Jun 2017 13:05:45 +0100</pubDate>
