@@ -44,6 +44,16 @@ The whole idea behind goQuery is to mimic jQuery, but -obviously- in Golang. I h
     </item>
     
     <item>
+      <title>Gofio</title>
+      <link>/post/gofio/</link>
+      <pubDate>Mon, 04 Sep 2017 15:18:58 +0100</pubDate>
+      
+      <guid>/post/gofio/</guid>
+      <description>Ever so often I have a 4 Mb digital photo that I want to use on a web site. Obviously a 4 Mb image on a web site isn&amp;rsquo;t such a good idea. I could of course open the image in some photo editing program, but a simple command line app that did the job would be nice. Hmmm, perhaps I could write one myself in Go?
+It turned out that I could and it wasn&amp;rsquo;t a very big job either.</description>
+    </item>
+    
+    <item>
       <title>Oauth in Golang</title>
       <link>/post/go-oauth/</link>
       <pubDate>Sat, 19 Aug 2017 15:54:56 +0100</pubDate>

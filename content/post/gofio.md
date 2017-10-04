@@ -30,4 +30,5 @@ For more advanced usage input flags are used.
 
 So, the command `$ gofio -i big.jpg -o small.jpg -w 1200 -r` will create a 1200 px wide copy of the file big.jpg, name it small.jpg and remove the original file big.jpg.
 
-
+## But What is Gofio anyway?
+Gofio is a traditional ingredients widely used in the Canaries - and has been for a long time. It's made from roasted grains (wheat or maize mostly) or chickpeas. It is very nutricious and  high in vitamins, proteins and minerals. The taste is acquired - to put it mildly. Itried it a few times, but don't really like it. Canarians love it though and use it for everything: soaps, stews, deserts, sauces, snacks etc.
