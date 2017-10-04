@@ -1,4 +1,4 @@
-baseurl = "https://hfogelberg.github.io/henrik"
+baseurl = "https://hfogelberg.github.io/henrik/"
 title = "Henrik Fogelberg"
 theme = "hugo-theme-nix"
 languageCode = "en-us"
