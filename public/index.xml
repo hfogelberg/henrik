@@ -6,10 +6,20 @@
     <description>Recent content on Henrik Fogelberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Oct 2017 16:16:12 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2017 08:34:17 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tensorflow in Jupyter Notebook</title>
+      <link>/post/tensorflow-in-jupyter-notebook/</link>
+      <pubDate>Thu, 05 Oct 2017 08:34:17 +0100</pubDate>
+      
+      <guid>/post/tensorflow-in-jupyter-notebook/</guid>
+      <description>Jupyter Notebook is a wonderful tool for machine learning in the Python world. Yes, I know, you can use other languages in Python, but I&amp;rsquo;ve never tried it.
+Anyway, it was time for me to start looking at Tensorflow and obviuosly I wanted to use it in Jupyter. This turned out to be a bit of a struggle and it took a few hours of Googling before I got it to work.</description>
+    </item>
     
     <item>
       <title>Zeit</title>
@@ -37,7 +47,7 @@
       <guid>/cv/</guid>
       <description>Summary I have been in the IT industry for more than 20 years and have worked with a wide range of hardware and programming languages. My all time favorite is however Golang, which I currently specialize in.
 Apart from programming I have practical experience of technical project management, requirement analyses, testing, business process analyses, software architecture, technical writing, teaching, etc.
-Employments Golizzard (own company) September 2015 - Present
+Employments Self employed September 2015 - Present
 Web development in Golang, Node JS, Vue JS.</description>
     </item>
     
