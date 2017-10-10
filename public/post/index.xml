@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Henrik Fogelberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Oct 2017 08:34:17 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 07 Oct 2017 10:00:53 +0100</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Middleware for Selected Routes in Golang</title>
+      <link>/post/middleware/</link>
+      <pubDate>Sat, 07 Oct 2017 10:00:53 +0100</pubDate>
+      
+      <guid>/post/middleware/</guid>
+      <description>You know the situation: you&amp;rsquo;re building a web site where the user needs to log in to reach some (most?) of the pages. So, how do check if they are logged in? I a smooth, easily manageable way of course. The answer in Go is to use middleware. There are a few different ways to do it in, but after a bit of googling and some trial and error this is the way I tend to do it.</description>
+    </item>
     
     <item>
       <title>Tensorflow in Jupyter Notebook</title>

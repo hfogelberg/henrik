@@ -82,5 +82,5 @@ n.UseHandler(mux)
 http.ListenAndServe(":3000", n)
 ````
 
-The complete sample code is available on[Github](https://github.com/hfogelberg/middleware-demo)
+The complete sample code is available on [Github](https://github.com/hfogelberg/middleware-demo)
 

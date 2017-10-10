@@ -2,7 +2,6 @@ baseurl = "/"
 title = "Henrik Fogelberg"
 theme = "hugo-theme-nix"
 languageCode = "en-us"
-googleAnalytics = "UA-107607086-1"
 
 [menu]
   [[menu.header]]
@@ -15,6 +14,7 @@ googleAnalytics = "UA-107607086-1"
     url = "/cv"
 
 [params]
+  googleAnalytics = "UA-107607086-1"
 	GithubID = "hfogelberg"
   TwitterID = "hfogelberg"
   LinkedInID = "henrikfogelberg"
