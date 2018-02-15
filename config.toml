@@ -1,26 +1,49 @@
-baseurl = "/"
-title = "Henrik Fogelberg"
-theme = "hugo-theme-nix"
-languageCode = "en-us"
+title = "Henrik Fogelberg | Web Developer"
+baseURL = "https://tomanistor.com"
+tags = ["portfolio", "web design", "blog"]
+languageCode = "en-US"
+config = "config.toml"
+theme = "osprey"
+canonifyURLS = true
+googleAnalytics = ""
+disqusShortname = ""
+disableKinds = ["taxonomy", "taxonomyTerm"] # This theme does not currently use "tag" and "category" taxonomies
+publishDir = "henrik"
 
-[menu]
-  [[menu.header]]
-    name = "posts"
-    weight = 0
-    url = "/post"
-  [[menu.header]]
-    name = "CV"
+[Params]
+    tagline = "Henrik Fogelberg"
+    author = "Henrik Fogelberg"
+    description = "Full stack web developer, based in Tenerife. Specialized in Golang and Vue."
+    logoBig = "profile.jpg"
+    logoSmall = "profile.jpg"
+    favicon = "favicon.ico"
+    opengraphImage = "profile.jpg"
+    twitter = "hfogelberg"
+    linkedin = "henrikfogelberg"
+    github = "hfogelberg"
+    email = "henrik.fogelberg@gmail.com"
+    googleTagManager = ""
+    highlightJS = true
+    copyright = true
+    credit = true
+    customCSS = false
+    cacheBustCSS = false
+    cacheBustJS = false
+    ajaxFormspree = true
+
+[[menu.main]]
+    name = "About"
+    url  = "/#about"
     weight = 1
-    url = "/cv"
-
-[params]
-  googleAnalytics = "UA-107607086-1"
-	GithubID = "hfogelberg"
-  TwitterID = "hfogelberg"
-  LinkedInID = "henrikfogelberg"
-  Name = "Henrik Fogelberg"
-  HeaderUsername = "henrik"
-  HeaderHostname = "fogelberg"
-  Email = "henrik.fogelberg@gmail.com"
-  About = "Hello! I've been working in the IT world for 20 years and messing around with computers for 30+. Mostly I've been programming and doing so on pretty much everyting from AS/400s to mobiles. My tools of choise are Golang, PWA and Vue.js. I'm also interested in AI/ML, but am a bit of a beginner there.\n\nCurrently I do freelance work and tinker with some projects on my own. Need som help? "
-  ProfilePicture = "/profile.jpg"
+[[menu.main]]
+    name = "Work"
+    url  = "/#work"
+    weight = 2
+[[menu.main]]
+    name = "Blog"
+    url  = "/#blog"
+    weight = 3
+[[menu.main]]
+    name = "Contact"
+    url  = "/#contact"
+    weight = 4
