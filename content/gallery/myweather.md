@@ -1,6 +1,6 @@
 +++ 
-date = "2018-02-11T15:50:02-07:00" 
-title = "Myweather" 
+date = "2018-02-01T15:50:02-07:00" 
+title = "Myweather: Node & Vue" 
 image = "myweather.jpg" 
 alt = "Weather app in Vu" 
 color = "#60d2d3" 

@@ -13,4 +13,4 @@ cover.out
 vendor/*/
 public/**
 
-henrik/**
+henrik/*/*

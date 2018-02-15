@@ -1,4 +1,4 @@
-title = "Henrik Fogelberg | Web Developer"
+title = "Henrik Fogelberg"
 baseURL = ""
 tags = ["portfolio", "web design", "blog"]
 languageCode = "en-US"
@@ -14,22 +14,22 @@ publishDir = "henrik"
     tagline = "Henrik Fogelberg"
     author = "Henrik Fogelberg"
     description = "Full stack web developer, based in Tenerife. Specialized in Golang and Vue."
-    logoBig = "profile.jpg"
-    logoSmall = "profile.jpg"
+    logoBig = "spiral.svg"
+    logoSmall = "spiral.svg"
     favicon = "favicon.ico"
     opengraphImage = "profile.jpg"
     twitter = "hfogelberg"
     linkedin = "henrikfogelberg"
     github = "hfogelberg"
-    email = ""
+    email = "henrik.fogelberg@gmail.com"
     googleTagManager = ""
     highlightJS = true
     copyright = false
     credit = false
-    customCSS = false
+    customCSS = true
     cacheBustCSS = false
     cacheBustJS = false
-    ajaxFormspree = true
+    ajaxFormspree = false
 
 [[menu.main]]
     name = "About"

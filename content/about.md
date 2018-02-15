@@ -3,9 +3,7 @@ title: "About"
 date: 2018-02-15T13:39:52Z
 draft: false
 ---
-I am a seasoned developer, currently living on the beautiful island of Tenerife. I've worked for 20+ years in the IT industry, mostly as a developer, but have been tinkering with a bit of everything.
-
-I've been in contact with a bunch of different languages, tools and hardware obviously, but my current prefered setup is:
+I am a seasoned developer with a 20+ years of the IT industry. I've been tinkering with a bit of everything, but have spent most of my time writing code. My prefered stack at the moment is:
 
 - A Mac to code on
 - and VS code for my editor

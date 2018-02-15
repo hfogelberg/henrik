@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2018-02-15T13:39:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/middleware/</loc>
+    <lastmod>2017-10-07T10:00:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tensorflow-jupyte/</loc>
+    <lastmod>2017-10-05T08:34:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/zeit/</loc>
+    <lastmod>2017-10-04T16:16:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/toogo/</loc>
+    <lastmod>2017-09-20T08:42:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/trumpscrape/</loc>
+    <lastmod>2017-09-16T17:38:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/gofio/</loc>
+    <lastmod>2017-09-04T15:18:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/go-auth/</loc>
+    <lastmod>2017-08-19T15:54:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/firebase-auth-vue/</loc>
+    <lastmod>2017-07-25T11:43:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/serve-node-and-vue/</loc>
+    <lastmod>2017-07-21T21:45:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/ml-course-review/</loc>
+    <lastmod>2017-06-16T11:04:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/why-go/</loc>
+    <lastmod>2017-06-01T13:05:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/templates-in-go/</loc>
+    <lastmod>2017-05-18T18:12:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/about-vue/</loc>
+    <lastmod>2017-04-11T21:45:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/react-course-review/</loc>
+    <lastmod>2016-02-04T08:16:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/mongolab-shell/</loc>
+    <lastmod>2015-11-18T18:12:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/meteor-on-heroku/</loc>
+    <lastmod>2015-10-16T09:42:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/mongo-iterate-update/</loc>
+    <lastmod>2015-10-13T18:08:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/semantic-meteor/</loc>
+    <lastmod>2015-10-01T14:02:08+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/mean-machine/</loc>
+    <lastmod>2014-04-19T17:59:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <lastmod>2017-10-07T10:00:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-02-15T14:25:02-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
