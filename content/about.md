@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: 2018-02-15T13:39:52Z
-draft: true
+draft: false
 ---
 I am a seasoned developer, currently living on the beautiful island of Tenerife. I've worked for 20+ years in the IT industry, mostly as a developer, but have been tinkering with a bit of everything.
 
