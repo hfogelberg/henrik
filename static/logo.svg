@@ -1,0 +1,39 @@
+<?xml version='1.0' standalone='no'?>
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+<svg width='512.000000' height='512.000000' version='1.1' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<marker id='ArrowFillLeft' viewBox='0 0 10 10' refX='5' refY='5'  
+			 markerUnits='strokeWidth' markerWidth='8' markerHeight='6' orient='auto'>
+			 <path d='M 10 0 L 0 5 L 10 10 z' />
+		</marker>
+		<marker id='ArrowFillRight' viewBox='0 0 10 10' refX='8' refY='5'  
+			 markerUnits='strokeWidth' markerWidth='8' markerHeight='6' orient='auto'>
+			 <path d='M 0 0 L 10 5 L 0 10 z' />
+		</marker>
+		<marker id='ArrowStrokeRight' viewBox='0 0 10 10' refX='8' refY='5'  
+			 markerUnits='strokeWidth' markerWidth='8' markerHeight='6' orient='auto'>
+			 <path d='M 0 0 L 10 5 L 0 10 L -1 8.8 L 7 5 L -1 1.2 z' />
+		</marker>
+		<marker id='ArrowStrokeLeft' viewBox='0 0 10 10' refX='2' refY='5'  
+			 markerUnits='strokeWidth' markerWidth='8' markerHeight='6' orient='auto'>
+			 <path d='M 10 0 L 11 1.2 L 3 5 L 11 8.8 L 10 10 L 0 5 z' />
+		</marker>
+	</defs>
+	<g>
+		<path d='M33.994232,249.563171 C33.994232,127.726006 132.762779,28.957458 254.599945,28.957458 C376.437111,28.957458 475.205658,127.726006 475.205658,249.563171 C475.205658,371.400337 376.437111,470.168884 254.599945,470.168884 C132.762779,470.168884 33.994232,371.400337 33.994232,249.563171' fill='#00A787' stroke='none' stroke-width='10.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='0.000000' />
+		<path d='M58.828796,249.225754 C58.828796,140.163864 147.240936,51.751724 256.302826,51.751724 C365.364716,51.751724 453.776855,140.163864 453.776855,249.225754 C453.776855,358.287643 365.364716,446.699783 256.302826,446.699783 C147.240936,446.699783 58.828796,358.287643 58.828796,249.225754' fill='#F7F2E3' stroke='#F7F2E3' stroke-width='10.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<path d='M158.617134,249.747253 C158.617134,195.140984 202.884270,150.873848 257.490540,150.873848 C312.096809,150.873848 356.363945,195.140984 356.363945,249.747253 C356.363945,304.353523 312.096809,348.620659 257.490540,348.620659 C202.884270,348.620659 158.617134,304.353523 158.617134,249.747253' fill='#00A787' stroke='none' stroke-width='10.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='0.000000' />
+		<path d='M176.635628,249.874374 C176.635628,205.019684 212.997543,168.657768 257.852234,168.657768 C302.706924,168.657768 339.068840,205.019684 339.068840,249.874374 C339.068840,294.729065 302.706924,331.090981 257.852234,331.090981 C212.997543,331.090981 176.635628,294.729065 176.635628,249.874374' fill='#F7F2E3' stroke='none' stroke-width='10.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='0.000000' />
+		<polygon points='210.507233,62.412135 277.073657,132.137613 181.500444,155.186633 ' fill='#00A787' stroke='#AA4100' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<polygon points='358.229542,86.746119 356.225240,181.286471 276.512982,132.108279 ' fill='#00A787' stroke='#AA4100' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<polygon points='94.587335,147.035222 184.241751,153.908764 139.356922,229.365511 ' fill='#00A787' stroke='#AA4100' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<polygon points='66.555601,294.562212 137.994280,226.499886 160.172789,320.004442 ' fill='#00A787' stroke='#AA4100' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<polygon points='144.402804,404.114716 158.850888,319.753226 227.801937,367.400783 ' fill='#00A787' stroke='#000000' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<polygon points='292.127366,444.370000 229.879202,368.516072 324.773192,352.092758 ' fill='#00A787' stroke='#AA4100' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<path d='M196.062428,248.177399 C196.062428,214.529285 223.339619,187.252094 256.987732,187.252094 C290.635845,187.252094 317.913036,214.529285 317.913036,248.177399 C317.913036,281.825512 290.635845,309.102703 256.987732,309.102703 C223.339619,309.102703 196.062428,281.825512 196.062428,248.177399' fill='#00A787' stroke='none' stroke-width='10.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='0.000000' />
+		<path d='M214.718906,247.491516 C214.718906,223.930815 233.818632,204.831089 257.379333,204.831089 C280.940035,204.831089 300.039761,223.930815 300.039761,247.491516 C300.039761,271.052217 280.940035,290.151943 257.379333,290.151943 C233.818632,290.151943 214.718906,271.052217 214.718906,247.491516' fill='#F7F2E3' stroke='none' stroke-width='10.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='0.000000' />
+		<path d='M242.931393,246.367325 C242.931393,238.866107 249.012332,232.785168 256.513550,232.785168 C264.014768,232.785168 270.095707,238.866107 270.095707,246.367325 C270.095707,253.868543 264.014768,259.949482 256.513550,259.949482 C249.012332,259.949482 242.931393,253.868543 242.931393,246.367325' fill='#00A787' stroke='#AA4100' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<polygon points='421.589100,359.355118 323.632736,353.592912 375.972588,272.752733 ' fill='#00A787' stroke='#AA4100' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+		<polygon points='445.388251,205.855331 376.940391,271.099380 355.601376,179.900778 ' fill='#00A787' stroke='#000000' stroke-width='0.000000' stroke-linejoin='round' fill-opacity='1.000000' stroke-opacity='1.000000' />
+	</g>
+</svg>

@@ -5,6 +5,8 @@ draft: false
 ---
 ![Passport](/passport.png)
 
+_This is a cross post from [Medium](https://medium.com/dailyjs/authenticating-a-vue-js-application-with-firebase-ui-8870a3a5cff8)_
+
 If you’re a startup, an indie developer or just working on some side project in Vue JS, chances are that you will be thinking of using Firebase for storage. This might very well be a good idea: Firebase is really easy to use and has quite a generous free plan. Of course nothing is completely free. If whatever you are working on does take off it could get expensive. But that’s perhaps a bit of a luxury problem.
 
 One thing I really like about Firebase is the authentication UI. Authentication is a crucial part of most web and mobile apps today and something I prefer to not mess around with. It’s quite a big commitment to build a good, secure, user friendly, well designed authentication solution and of course maintain it.
@@ -208,4 +210,5 @@ Just run the app with npm run dev and hopefully you’ll have the Auth view on y
 
 If you are running on Chrome open the dev-tools, click on Application and choose Local storage in the menu. There you will find the firebase token
 Finally, click on Sign out and you should be sent back to the Sign in screen. Not bad, eh?
-The code for this tutorial is available on [Github](https://github.com/hfogelberg/fb-auth-demo).
+
+_The code for this tutorial is available on [Github](https://github.com/hfogelberg/fb-auth-demo)._

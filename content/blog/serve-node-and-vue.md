@@ -3,6 +3,10 @@ title: "Simultaneously Serve Node and Vue"
 date: 2017-07-21T21:45:12Z
 draft: false
 ---
+![Think](think.jpeg)
+
+_This is a cross post from [Medium](https://medium.com/dailyjs/vue-js-simultaneously-running-express-and-webpack-dev-server-292f4a7ed7a3)._
+
 One stumbling block when I first started using Vue was figuring out how to run a Node server in the same project as an application written in Vue JS. I searched all over the net but couldn’t really find anything and ended up with the code in two different projects. That’s fine of course, but I just felt it was a bit unaesthetic and messy. So the search continued!
 
 ### PM2 to the rescue!
@@ -63,5 +67,5 @@ If you have any processes running stop the using pm2 pm2 stop all and run the de
 Enjoy!
 
 
-The sample code is available on [Github](https://github.com/hfogelberg/pm2-demo).
+_The sample code is available on [Github](https://github.com/hfogelberg/pm2-demo)._
 
