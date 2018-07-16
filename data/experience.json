@@ -1,0 +1,56 @@
+[
+  {
+    "role": "Senior Developer",
+    "company": "Ifrågasätt media AB",
+    "summary": "Developing cloud based services for digital media at a startup. Go, Node, Vue, React, AWS",
+    "range": "May 2018 - Present"
+  },
+  {
+    "role": "Freelance Developer",
+    "company": "Golizard",
+    "summary": "Freelance work. Development in Meteor, React Native, Vue and Go.",
+    "range": "September 2015-April 2018"
+  },
+  {
+    "role": "Senior Developer",
+    "company": "ÅF",
+    "summary": "Prestudies, architecture and programming. Web and iOS development. ASP.Net, iOS",
+    "range": "November 2012 - August 2015"
+  },
+  {
+    "role": "Senior Developer",
+    "company": "Itio Systems AB",
+    "summary": "Web and mobile development in Ruby on Rails and iOS",
+    "range": "June 2011 - December 2013"
+  },
+  {
+    "role": "Senior Developer",
+    "company": "CSC",
+    "summary": "Programmer and architect on various web projects. ASP.Net, C#, Silverlight ",
+    "range": "May 2007 - June 2011"
+  },
+  {
+    "role": "Developer",
+    "company": "VA Utveckling",
+    "summary": "Web and mobile development. VB, C#, SQL Server, Oracle",
+    "range": "April 2005 - May 2007"
+  },
+  {
+    "role": "Developer",
+    "company": "Momentum Fastighetssystem",
+    "summary": "Windows development on a system for property management. VB6, VB.Net, SQL Server",
+    "range": "April 2001 - November 2002"
+  },
+  {
+    "role": "Developer",
+    "company": "Agria",
+    "summary": "Developer at an insurance company. Mainly worked on ducument management and workflow. Obsydian, VB4-6",
+    "range": "November 1997 - April 2001"
+  },
+  {
+    "role": "VM Data",
+    "company": "Momentum Fastighetssystem",
+    "summary": "Document management, workflow and OCR solutions. SQL Windows, VB4 and SQL Server",
+    "range": "June 1996 - November 1997"
+  }
+]

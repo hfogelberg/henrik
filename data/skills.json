@@ -1,0 +1,55 @@
+[
+  {
+    "grouping": "Architecture",
+    "skills": [
+      "Microservices",
+      "RESTful APIs",
+      "SaaS",
+      "AWS",
+      "Mobile Web"
+    ]
+  },
+  {
+    "grouping": "Languages",
+    "skills": [
+      "Golang",
+      "Javascript",
+      "Ruby",
+      "Python",
+      "C#",
+      "VB",
+      "Objective-C",
+      "Swift"
+    ]
+  },
+  {
+    "grouping": "Frameworks etc",
+    "skills": [
+      "Node JS",
+      "VueJS",
+      "React",
+      "Rails"
+    ]
+  },
+  {
+    "grouping": "Tools",
+    "skills": [
+      "VS Code",
+      "Visual Studio",
+      "XCode",
+      "Vim",
+      "Git",
+      "Jira"
+    ]
+  },
+  {
+    "grouping": "Databases",
+    "skills": [
+      "MongoDB",
+      "MySQL",
+      "Postgres",
+      "Aurora",
+      "DynamoDB"
+    ]
+  }
+]

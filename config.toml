@@ -1,49 +1,43 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
 title = "Henrik Fogelberg"
-baseURL = ""
-tags = ["portfolio", "javascript", "node.js", "vue.js", "react", "golang","blog"]
-languageCode = "en-US"
-config = "config.toml"
-theme = "osprey"
-canonifyURLS = true
-googleAnalytics = "UA-107607086-1"
-disqusShortname = ""
-disableKinds = ["taxonomy", "taxonomyTerm"] # This theme does not currently use "tag" and "category" taxonomies
-publishDir = "henrik"
+theme = "resume"
 
-[Params]
-    tagline = "Henrik Fogelberg"
-    author = "Henrik Fogelberg"
-    description = "Full stack web developer, based in Tenerife. Specialized in Golang and Vue."
-    logoBig = "logo.svg"
-    logoSmall = "logo.svg"
-    favicon = "favicon.ico"
-    opengraphImage = "profile.jpg"
-    twitter = "hfogelberg"
-    linkedin = "henrikfogelberg"
-    github = "hfogelberg"
+[params]
+    firstName = "Henrik"
+    lastName = "Fogelberg"
+    address = "Malmö, Sweden"
+    contactNote = "Full stack developer"
+    profileImage = "img/logo.svg"
     email = "henrik.fogelberg@gmail.com"
-    googleTagManager = ""
-    highlightJS = true
-    copyright = false
-    credit = false
-    customCSS = true
-    cacheBustCSS = false
-    cacheBustJS = false
-    ajaxFormspree = false
+    description = "Full stack (mostly back end) developer. Fan of Golang. I work at a startup which makes it possibly to have creative, troll free and hateless discussions in digital media ."
+    favicon = "img/favicon.ico"
+    # what sections
+    showSkills = true
+    showProjects = false
+    showOpenSource = false
+    showPublications = true
+    showExperience = true
 
-[[menu.main]]
-    name = "About"
-    url  = "/#about"
-    weight = 1
-[[menu.main]]
-    name = "Work"
-    url  = "/#work"
-    weight = 2
-[[menu.main]]
-    name = "Blog"
-    url  = "/#blog"
-    weight = 3
-[[menu.main]]
-    name = "Contact"
-    url  = "/#contact"
-    weight = 4
+[[params.handles]]
+    name = "LinkedIn"
+    link = "https://www.linkedin.com/in/henrikfogelberg/"
+
+
+[[params.handles]]
+    name = "GitHub"
+    link = "https://github.com/hfogelberg/"
+
+
+[[params.handles]]
+    name = "Slack"
+    link = "https://ifragasatt.slack.com/messages/DANDMMUK1"
+    icon = "slack"
+
+[[params.handles]]
+    name = "twitter"
+    link = "https://twitter.com/hfogelberg"
+    icon = "twitter"
+
+[params.google.analytics]
+    trackerID = "XX-123446-01"
