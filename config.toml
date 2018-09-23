@@ -1,7 +1,7 @@
 baseURL = ""
 languageCode = "en-us"
 title = "Henrik Fogelberg"
-theme = "resume"
+theme = "hugo-resume"
 
 [params]
     firstName = "Henrik"
@@ -41,6 +41,3 @@ theme = "resume"
 
 [params.google.analytics]
     trackerID = "UA-107607086-01"
-
-[context.production.environment]
-  HUGO_VERSION = "0.47"
