@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Henrik Fogelberg</title>
+    <link>/tags/react/</link>
+    <description>Recent content in React on Henrik Fogelberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lean React Project With Parcel</title>
+      <link>/publications/react-parcel/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/react-parcel/</guid>
+      <description>When I first tried React a couple of years ago it was a nightmare setting up a new project. You either had a full day’s job ahead of you doing it from scratch or googled for a starter kit on Github. Finding the right one could of course require a full day too, since everyone who was in to React had a couple of different versions lying around, ever so often with messed up dependencies.</description>
+    </item>
+    
+  </channel>
+</rss>

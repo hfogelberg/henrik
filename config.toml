@@ -1,4 +1,4 @@
-baseURL = "https://example.com/"
+baseURL = ""
 languageCode = "en-us"
 title = "Henrik Fogelberg"
 theme = "resume"
@@ -40,4 +40,7 @@ theme = "resume"
     icon = "twitter"
 
 [params.google.analytics]
-    trackerID = "XX-123446-01"
+    trackerID = "UA-107607086-01"
+
+[context.production.environment]
+  HUGO_VERSION = "0.47"

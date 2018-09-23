@@ -6,29 +6,30 @@
       "RESTful APIs",
       "SaaS",
       "AWS",
-      "Mobile Web"
+      "Mobile"
     ]
   },
   {
-    "grouping": "Languages",
+    "grouping": "Languages etc",
     "skills": [
-      "Golang",
+      "Go",
       "Javascript",
       "Ruby",
       "Python",
       "C#",
-      "VB",
-      "Objective-C",
-      "Swift"
+      "Swift",
+      "HTML5",
+      "CSS3"
     ]
   },
   {
     "grouping": "Frameworks etc",
     "skills": [
       "Node JS",
-      "VueJS",
+      "vuejs",
       "React",
-      "Rails"
+      "SASS",
+      ".NET"
     ]
   },
   {

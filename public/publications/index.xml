@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications on Henrik Fogelberg</title>
+    <link>/publications/</link>
+    <description>Recent content in Publications on Henrik Fogelberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/publications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Lean React Project With Parcel</title>
+      <link>/publications/react-parcel/</link>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/react-parcel/</guid>
+      <description>When I first tried React a couple of years ago it was a nightmare setting up a new project. You either had a full day’s job ahead of you doing it from scratch or googled for a starter kit on Github. Finding the right one could of course require a full day too, since everyone who was in to React had a couple of different versions lying around, ever so often with messed up dependencies.</description>
+    </item>
+    
+    <item>
+      <title>Google Places Autocomplete in Vue</title>
+      <link>/publications/vue-google-places/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/vue-google-places/</guid>
+      <description>Google Places Autocomplete has been a life saver for me many a time. It’s so powerful and easy to use! Plug it in, write half a dozen lines of code. Done. And it works so well it almost seems read my mind. Most of the time I just need to type three or four characters and can pick the location I want.</description>
+    </item>
+    
+    <item>
+      <title>The Black Magic of Oauth in Golang</title>
+      <link>/publications/go-oauth/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/go-oauth/</guid>
+      <description>Years ago when I first came in contact with Oauth it just seemed like magic. I just plugged it in and didn’t think too much about what was going on and why. The truth is that there is no magic involved and it really is quite simple.</description>
+    </item>
+    
+    <item>
+      <title>Authenticating a Vue JS Application With Firebase UI</title>
+      <link>/publications/vue-firebase-ui/</link>
+      <pubDate>Mon, 10 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/vue-firebase-ui/</guid>
+      <description>If you’re a startup, an indie developer or just working on some side project in Vue JS, chances are that you will be thinking of using Firebase for storage. This might very well be a good idea: Firebase is really easy to use and has quite a generous free plan. Of course nothing is completely free. If whatever you are working on does take off it could get expensive. But that’s perhaps a bit of a luxury problem.</description>
+    </item>
+    
+    <item>
+      <title>Vue JS: Simultaneously Running Express and Webpack Dev Server</title>
+      <link>/publications/vue-react/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/vue-react/</guid>
+      <description>One stumbling block when I first started using Vue was figuring out how to run a Node server in the same project as an application written in Vue JS. I searched all over the net but couldn’t really find anything and ended up with the code in two different projects. That’s fine of course, but I just felt it was a bit unaesthetic and messy. So the search continued!</description>
+    </item>
+    
+  </channel>
+</rss>

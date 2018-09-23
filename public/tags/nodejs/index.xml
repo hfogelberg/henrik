@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nodejs on Henrik Fogelberg</title>
+    <link>/tags/nodejs/</link>
+    <description>Recent content in Nodejs on Henrik Fogelberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue JS: Simultaneously Running Express and Webpack Dev Server</title>
+      <link>/publications/vue-react/</link>
+      <pubDate>Fri, 24 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/vue-react/</guid>
+      <description>One stumbling block when I first started using Vue was figuring out how to run a Node server in the same project as an application written in Vue JS. I searched all over the net but couldn’t really find anything and ended up with the code in two different projects. That’s fine of course, but I just felt it was a bit unaesthetic and messy. So the search continued!</description>
+    </item>
+    
+  </channel>
+</rss>

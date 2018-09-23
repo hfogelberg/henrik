@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oauth on Henrik Fogelberg</title>
+    <link>/tags/oauth/</link>
+    <description>Recent content in Oauth on Henrik Fogelberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Aug 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/oauth/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Black Magic of Oauth in Golang</title>
+      <link>/publications/go-oauth/</link>
+      <pubDate>Thu, 03 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/go-oauth/</guid>
+      <description>Years ago when I first came in contact with Oauth it just seemed like magic. I just plugged it in and didn’t think too much about what was going on and why. The truth is that there is no magic involved and it really is quite simple.</description>
+    </item>
+    
+  </channel>
+</rss>

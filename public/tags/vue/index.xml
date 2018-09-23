@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on Henrik Fogelberg</title>
+    <link>/tags/vue/</link>
+    <description>Recent content in Vue on Henrik Fogelberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Places Autocomplete in Vue</title>
+      <link>/publications/vue-google-places/</link>
+      <pubDate>Sun, 25 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/publications/vue-google-places/</guid>
+      <description>Google Places Autocomplete has been a life saver for me many a time. It’s so powerful and easy to use! Plug it in, write half a dozen lines of code. Done. And it works so well it almost seems read my mind. Most of the time I just need to type three or four characters and can pick the location I want.</description>
+    </item>
+    
+  </channel>
+</rss>
